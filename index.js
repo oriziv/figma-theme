@@ -109,7 +109,7 @@ module.exports = (data, opts = {}) => {
         fontSize,
         letterSpacing
       } = style.value
-      const lineHeight = style.value.lineHeightPx;
+      const lineHeight = opts && opts.px ? style.value.lineHeightPx : style.value.lineHeightPercent / 100;
       return Object.assign({}, style, {
         value: {
           fontFamily,
